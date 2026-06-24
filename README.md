@@ -31,4 +31,4 @@ https://yikai9166.github.io/QR-Code-Excel-Label-Generator/
 工單號碼@@入庫異動單號@數量@日期@序號
 ```
 
-日期使用 `YYYYMMDD`，序號最少補 4 碼。
+日期使用 `YYYYMMDD`。序號格式為產生當下時間 `yyyyMMddHHmmss` 加上 4 碼流水碼，例如 `202606241435120001`。

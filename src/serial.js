@@ -11,7 +11,22 @@
     return String(serialNumber).padStart(4, "0");
   }
 
-  function generateSerials(startSerial, count) {
+  function padDatePart(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function formatTimestamp(date) {
+    return [
+      date.getFullYear(),
+      padDatePart(date.getMonth() + 1),
+      padDatePart(date.getDate()),
+      padDatePart(date.getHours()),
+      padDatePart(date.getMinutes()),
+      padDatePart(date.getSeconds())
+    ].join("");
+  }
+
+  function generateSerials(startSerial, count, generatedAt = new Date()) {
     const start = toInteger(startSerial, "起始序號");
     const total = toInteger(count, "產生張數");
 
@@ -23,10 +38,12 @@
       throw new Error("產生張數必須大於 0");
     }
 
-    return Array.from({ length: total }, (_, index) => padSerial(start + index));
+    const timestamp = formatTimestamp(generatedAt);
+    return Array.from({ length: total }, (_, index) => `${timestamp}${padSerial(start + index)}`);
   }
 
   window.SerialGenerator = {
+    formatTimestamp,
     generateSerials,
     padSerial
   };
