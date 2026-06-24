@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Code Excel 標籤產生器</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="toolbar">
+          <div>
+            <h1 id="page-title">QR Code Excel 標籤產生器</h1>
+            <p>輸入工單資料後，產生可下載的 Excel 標籤檔。</p>
+          </div>
+          <div class="status-pill" id="statusText" aria-live="polite">待輸入資料</div>
+        </header>
+
+        <form id="labelForm" class="form-grid" novalidate>
+          <label>
+            <span>工單號碼</span>
+            <input id="workOrder" name="workOrder" type="text" value="1400000043" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>入庫異動單號</span>
+            <input id="receiptNo" name="receiptNo" type="text" value="IN20211201001" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>數量</span>
+            <input id="quantity" name="quantity" type="text" value="600" inputmode="numeric" required>
+          </label>
+
+          <label>
+            <span>日期</span>
+            <input id="labelDate" name="labelDate" type="date" value="2021-12-01" required>
+          </label>
+
+          <label>
+            <span>料號</span>
+            <input id="partNo" name="partNo" type="text" value="NSH-38025" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>下一製程</span>
+            <input id="nextProcess" name="nextProcess" type="text" value="沖字" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>產生張數</span>
+            <input id="labelCount" name="labelCount" type="number" value="3" min="1" step="1" required>
+          </label>
+
+          <label>
+            <span>起始序號</span>
+            <input id="startSerial" name="startSerial" type="number" value="1" min="0" step="1" required>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" id="generateButton">產生標籤 Excel</button>
+            <button type="button" id="resetButton" class="secondary">清除訊息</button>
+          </div>
+        </form>
+
+        <p id="message" class="message" role="alert"></p>
+      </section>
+
+      <aside class="preview" aria-labelledby="preview-title">
+        <h2 id="preview-title">標籤預覽</h2>
+        <div class="label-preview">
+          <div class="preview-text">
+            <p><strong>工單：</strong><span id="previewWorkOrder">1400000043</span></p>
+            <p><strong>數量：</strong><span id="previewQuantity">600</span></p>
+            <p><strong>料號：</strong><span id="previewPartNo">NSH-38025</span></p>
+            <p><strong>下一製程：</strong></p>
+            <p id="previewNextProcess" class="process">沖字</p>
+            <p><strong>列印日期：</strong><span id="previewDate">2021/12/01</span></p>
+          </div>
+          <div class="qr-placeholder" aria-hidden="true">
+            <span>QR</span>
+          </div>
+        </div>
+        <dl class="summary-list">
+          <div>
+            <dt>第一張序號</dt>
+            <dd id="previewFirstSerial">0001</dd>
+          </div>
+          <div>
+            <dt>最後序號</dt>
+            <dd id="previewLastSerial">0003</dd>
+          </div>
+          <div>
+            <dt>張數</dt>
+            <dd id="previewCount">3</dd>
+          </div>
+        </dl>
+      </aside>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
