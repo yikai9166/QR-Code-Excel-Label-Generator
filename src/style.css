@@ -92,6 +92,11 @@ h2 {
   text-align: center;
 }
 
+.status-pill[hidden],
+.message[hidden] {
+  display: none;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -219,6 +224,17 @@ button.secondary:hover {
     #ffffff;
   color: #ffffff;
   font-weight: 800;
+}
+
+.qr-placeholder canvas {
+  display: block;
+  width: 112px;
+  height: 112px;
+}
+
+.qr-placeholder.has-qr {
+  border: 0;
+  background: #ffffff;
 }
 
 .summary-list {

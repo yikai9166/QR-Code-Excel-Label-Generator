@@ -78,8 +78,9 @@
             <p id="previewNextProcess" class="process">無</p>
             <p><strong>列印日期：</strong><span id="previewDate">2026/01/01</span></p>
           </div>
-          <div class="qr-placeholder" aria-hidden="true">
-            <span>QR</span>
+          <div class="qr-placeholder" id="previewQr" aria-label="QR Code 預覽">
+            <canvas id="previewQrCanvas" width="112" height="112" hidden></canvas>
+            <span id="previewQrFallback">QR</span>
           </div>
         </div>
         <dl class="summary-list">
