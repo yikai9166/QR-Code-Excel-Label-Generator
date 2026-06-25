@@ -20,37 +20,37 @@
         <form id="labelForm" class="form-grid" novalidate>
           <label>
             <span>製令單號</span>
-            <input id="workOrder" name="workOrder" type="text" value="1400000043" autocomplete="off" required>
+            <input id="workOrder" name="workOrder" type="text" autocomplete="off" required>
           </label>
 
           <label>
             <span>單據號</span>
-            <input id="receiptNo" name="receiptNo" type="text" value="IN20211201001" autocomplete="off" required>
+            <input id="receiptNo" name="receiptNo" type="text" autocomplete="off" required>
           </label>
 
           <label>
             <span>數量</span>
-            <input id="quantity" name="quantity" type="text" value="600" inputmode="numeric" required>
+            <input id="quantity" name="quantity" type="text" inputmode="numeric" required>
           </label>
 
           <label>
             <span>日期</span>
-            <input id="labelDate" name="labelDate" type="date" value="2021-12-01" required>
+            <input id="labelDate" name="labelDate" type="date" value="2026-01-01" required>
           </label>
 
           <label>
             <span>料號</span>
-            <input id="partNo" name="partNo" type="text" value="NSH-38025" autocomplete="off" required>
+            <input id="partNo" name="partNo" type="text" autocomplete="off" required>
           </label>
 
           <label>
             <span>下一製程</span>
-            <input id="nextProcess" name="nextProcess" type="text" value="沖字" autocomplete="off" required>
+            <input id="nextProcess" name="nextProcess" type="text" value="無" autocomplete="off" required>
           </label>
 
           <label>
             <span>產生張數</span>
-            <input id="labelCount" name="labelCount" type="number" value="3" min="1" step="1" required>
+            <input id="labelCount" name="labelCount" type="number" min="1" step="1" required>
           </label>
 
           <label>
@@ -71,12 +71,12 @@
         <h2 id="preview-title">標籤預覽</h2>
         <div class="label-preview">
           <div class="preview-text">
-            <p><strong>工單：</strong><span id="previewWorkOrder">1400000043</span></p>
-            <p><strong>數量：</strong><span id="previewQuantity">600</span></p>
-            <p><strong>料號：</strong><span id="previewPartNo">NSH-38025</span></p>
+            <p><strong>工單：</strong><span id="previewWorkOrder"></span></p>
+            <p><strong>數量：</strong><span id="previewQuantity"></span></p>
+            <p><strong>料號：</strong><span id="previewPartNo"></span></p>
             <p><strong>下一製程：</strong></p>
-            <p id="previewNextProcess" class="process">沖字</p>
-            <p><strong>列印日期：</strong><span id="previewDate">2021/12/01</span></p>
+            <p id="previewNextProcess" class="process">無</p>
+            <p><strong>列印日期：</strong><span id="previewDate">2026/01/01</span></p>
           </div>
           <div class="qr-placeholder" aria-hidden="true">
             <span>QR</span>
@@ -85,15 +85,15 @@
         <dl class="summary-list">
           <div>
             <dt>第一張序號</dt>
-            <dd id="previewFirstSerial">0001</dd>
+            <dd id="previewFirstSerial">-</dd>
           </div>
           <div>
             <dt>最後序號</dt>
-            <dd id="previewLastSerial">0003</dd>
+            <dd id="previewLastSerial">-</dd>
           </div>
           <div>
             <dt>張數</dt>
-            <dd id="previewCount">3</dd>
+            <dd id="previewCount">-</dd>
           </div>
         </dl>
       </aside>
